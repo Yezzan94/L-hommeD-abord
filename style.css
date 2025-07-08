@@ -85,4 +85,70 @@ h1, h2, h3 {
 }
 .tarif-list li {
   margin-bottom: 8px;
-  bord
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.gallery img {
+  width: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.btn-reservation {
+  display: inline-block;
+  background-color: #f5deb3;
+  color: #0d0d0d;
+  padding: 10px 20px;
+  margin: 15px 0;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-reservation:hover {
+  background-color: #e0c675;
+}
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.badge {
+  display: inline-block;
+  background: crimson;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  animation: pulse 1.2s infinite;
+  margin-left: 10px;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #f5deb3;
+}
