@@ -9,7 +9,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({ duration: 1000 });
+    });
+  </script>
+  <style>
+    body {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -26,10 +41,10 @@
     <img src="img/logo.jpg" alt="Logo L'Homme D'Abord">
   </header>
 
-  <section id="salons">
+  <section id="salons" data-aos="fade-up">
     <h2>Nos Salons</h2>
 
-    <div class="salon">
+    <div class="salon" data-aos="fade-up">
       <h3>Fameck</h3>
       <p><strong>Adresse :</strong> Galerie du E.LECLERC, Av. François Mitterrand, 57290 Fameck</p>
       <p><strong>Téléphone :</strong> +33 3 72 82 96 80</p>
@@ -41,14 +56,14 @@
       <p><a class="btn-reservation" href="https://www.planity.com/lhomme-dabord-57290-fameck" target="_blank">Réserver en ligne</a></p>
     </div>
 
-    <div class="salon">
+    <div class="salon" data-aos="fade-up">
       <h3>Metz <span class="badge">Bientôt !</span></h3>
       <p>1 Rue Harelle, Metz</p>
       <iframe src="https://www.google.com/maps?q=1+Rue+Harelle,+Metz,+France&output=embed"></iframe>
     </div>
   </section>
 
-  <section id="tarifs">
+  <section id="tarifs" data-aos="fade-up">
     <h2>Prestations & Tarifs</h2>
     <ul class="tarif-list">
       <li>Coupe : 18€</li>
@@ -64,7 +79,7 @@
     </ul>
   </section>
 
-  <section id="galerie">
+  <section id="galerie" data-aos="fade-up">
     <h2>Galerie</h2>
     <div class="gallery">
       <img src="img/photo1.jpg" alt="Client en coupe 1">
@@ -72,7 +87,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Suivez-nous</h2>
     <div class="social-icons">
       <a href="https://www.instagram.com/lhomme_dabord0" target="_blank">
