@@ -4,27 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>L'HOMME D'ABORD - BARBERSHOP</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="img/logo.jpg"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      AOS.init({ duration: 1000 });
-
-      const logoWrapper = document.querySelector('.logo-wrapper');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-          logoWrapper.classList.add('sticky');
-        } else {
-          logoWrapper.classList.remove('sticky');
-        }
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
   <div class="logo-wrapper">
@@ -33,17 +16,16 @@
 
   <nav>
     <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#salons">Salons</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#salons-anchor">Salons</a></li>
+      <li><a href="#tarifs-anchor">Tarifs</a></li>
+      <li><a href="#galerie-anchor">Galerie</a></li>
+      <li><a href="#contact-anchor">Contact</a></li>
     </ul>
   </nav>
 
+  <div id="salons-anchor" class="anchor"></div>
   <section id="salons" data-aos="fade-up">
     <h2>Nos Salons</h2>
-
     <div class="salon" data-aos="fade-up">
       <h3>Fameck</h3>
       <p><strong>Adresse :</strong> Galerie du E.LECLERC, Av. François Mitterrand, 57290 Fameck</p>
@@ -63,6 +45,7 @@
     </div>
   </section>
 
+  <div id="tarifs-anchor" class="anchor"></div>
   <section id="tarifs" data-aos="fade-up">
     <h2>Prestations & Tarifs</h2>
     <ul class="tarif-list">
@@ -79,6 +62,7 @@
     </ul>
   </section>
 
+  <div id="galerie-anchor" class="anchor"></div>
   <section id="galerie" data-aos="fade-up">
     <h2>Galerie</h2>
     <div class="gallery">
@@ -87,6 +71,7 @@
     </div>
   </section>
 
+  <div id="contact-anchor" class="anchor"></div>
   <section id="contact" data-aos="fade-up">
     <h2>Suivez-nous</h2>
     <div class="social-icons">
@@ -100,5 +85,19 @@
   <footer>
     <p>&copy; 2025 L'HOMME D'ABORD - BARBERSHOP. Tous droits réservés.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    const logoWrapper = document.querySelector('.logo-wrapper');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        logoWrapper.classList.add('sticky');
+      } else {
+        logoWrapper.classList.remove('sticky');
+      }
+    });
+  </script>
 </body>
 </html>
