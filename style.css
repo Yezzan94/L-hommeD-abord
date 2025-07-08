@@ -1,30 +1,61 @@
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #0d0d0d;
   color: #f5deb3;
+  scroll-behavior: smooth;
 }
-header {
+
+nav {
   background-color: #000;
   color: #f5deb3;
-  padding: 40px 20px 20px 20px;
-  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #f5deb3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header {
+  position: sticky;
+  top: 48px;
+  z-index: 999;
+  background-color: #0d0d0d;
+}
+
 header img {
-  max-width: 250px;
+  width: 100vw;
   height: auto;
-  margin-bottom: 10px;
+  max-height: 180px;
+  object-fit: contain;
+  display: block;
 }
+
 section {
   padding: 20px;
   max-width: 1000px;
   margin: auto;
 }
+
 h1, h2, h3 {
   color: #f5deb3;
 }
+
 .salon {
   background: #1a1a1a;
   margin-bottom: 20px;
@@ -32,25 +63,30 @@ h1, h2, h3 {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(245, 222, 179, 0.1);
 }
+
 .tarif-list {
   list-style-type: none;
   padding: 0;
 }
+
 .tarif-list li {
   margin-bottom: 8px;
   border-bottom: 1px solid #333;
   padding-bottom: 5px;
 }
+
 footer {
   text-align: center;
   padding: 20px;
   background-color: #000;
   color: #f5deb3;
 }
+
 .insta a {
   color: #f5deb3;
   text-decoration: none;
 }
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -58,11 +94,13 @@ footer {
   justify-content: center;
   margin-top: 20px;
 }
+
 .gallery img {
   width: 250px;
   border-radius: 10px;
   object-fit: cover;
 }
+
 iframe {
   border: none;
   width: 100%;
@@ -70,6 +108,7 @@ iframe {
   border-radius: 10px;
   margin-top: 10px;
 }
+
 .btn-reservation {
   display: inline-block;
   background-color: #f5deb3;
@@ -79,4 +118,32 @@ iframe {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background: crimson;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  animation: pulse 1.2s infinite;
+  margin-left: 10px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
 }
