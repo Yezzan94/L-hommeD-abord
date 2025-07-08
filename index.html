@@ -24,6 +24,21 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    header {
+      position: sticky;
+      top: 48px;
+      z-index: 999;
+      background-color: #000;
+    }
+    .banner {
+      width: 100vw;
+      height: 250px;
+      background: url('img/logo.jpg') center/contain no-repeat;
+      background-color: #000;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   </style>
 </head>
 <body>
@@ -38,7 +53,7 @@
   </nav>
 
   <header>
-    <img src="img/logo.jpg" alt="Logo L'Homme D'Abord">
+    <div class="banner"></div>
   </header>
 
   <section id="salons" data-aos="fade-up">
