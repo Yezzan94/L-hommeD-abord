@@ -10,6 +10,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #000;
+      color: #f5deb3;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #f5deb3;
+      text-decoration: none;
+      font-weight: bold;
+    }
     .social-icons {
       margin-top: 10px;
     }
@@ -19,16 +43,41 @@
       vertical-align: middle;
       margin-right: 10px;
     }
+    .badge {
+      display: inline-block;
+      background: crimson;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      animation: pulse 1.2s infinite;
+      margin-left: 10px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#salons">Salons</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
     <img src="img/logo.jpg" alt="Logo L'Homme D'Abord">
     <h1>L'HOMME D'ABORD - BARBERSHOP</h1>
     <p>Votre style, notre passion</p>
   </header>
 
-  <section>
+  <section id="salons">
     <h2>Nos Salons</h2>
 
     <div class="salon">
@@ -44,14 +93,13 @@
     </div>
 
     <div class="salon">
-      <h3>Metz</h3>
-      <p><em>Ouverture prochaine !</em></p>
+      <h3>Metz <span class="badge">Bientôt !</span></h3>
       <p>1 Rue Harelle, Metz</p>
       <iframe src="https://www.google.com/maps?q=1+Rue+Harelle,+Metz,+France&output=embed"></iframe>
     </div>
   </section>
 
-  <section>
+  <section id="tarifs">
     <h2>Prestations & Tarifs</h2>
     <ul class="tarif-list">
       <li>Coupe : 18€</li>
@@ -68,7 +116,7 @@
     </ul>
   </section>
 
-  <section>
+  <section id="galerie">
     <h2>Galerie</h2>
     <div class="gallery">
       <img src="img/photo1.jpg" alt="Client en coupe 1">
@@ -76,7 +124,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Suivez-nous</h2>
     <div class="social-icons">
       <a href="https://www.instagram.com/lhomme_dabord0" target="_blank">
