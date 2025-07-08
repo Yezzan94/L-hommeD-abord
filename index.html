@@ -17,12 +17,25 @@
       AOS.init({ duration: 1000 });
 
       const logoWrapper = document.querySelector('.logo-wrapper');
+      const nav = document.querySelector('.main-nav');
+      let lastScrollTop = 0;
+
       window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          nav.classList.add('nav-hidden');
+        } else {
+          nav.classList.remove('nav-hidden');
+        }
+
         if (window.scrollY > 100) {
           logoWrapper.classList.add('sticky');
         } else {
           logoWrapper.classList.remove('sticky');
         }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       });
     });
   </script>
@@ -59,7 +72,7 @@
 
     <div class="salon" data-aos="fade-up">
       <h3>Metz <span class="badge">Bientôt !</span></h3>
-      <p>L'HOMME D'ABORD, 1 Rue Harelle, 57950 Metz</p>
+      <p>1 Rue Harelle, Metz</p>
       <iframe src="https://www.google.com/maps?q=1+Rue+Harelle,+Metz,+France&output=embed"></iframe>
     </div>
   </section>
@@ -84,9 +97,11 @@
   <div id="galerie-anchor"></div>
   <section id="galerie" data-aos="fade-up">
     <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="img/photo1.jpg" alt="Client en coupe 1" />
-      <img src="img/photo2.jpg" alt="Client en coupe 2" />
+    <div class="gallery-scroll">
+      <div class="gallery-track">
+        <img src="img/photo1.jpg" alt="Client en coupe 1" />
+        <img src="img/photo2.jpg" alt="Client en coupe 2" />
+      </div>
     </div>
   </section>
 
