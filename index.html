@@ -1,84 +1,45 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>L'HOMME D'ABORD - BARBERSHOP</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="img/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      AOS.init({ duration: 1000 });
-
-      const logoWrapper = document.querySelector('.logo-wrapper');
-      const nav = document.querySelector('.main-nav');
-      let lastScrollTop = 0;
-
-      window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-          nav.classList.add('nav-hidden');
-        } else {
-          nav.classList.remove('nav-hidden');
-        }
-
-        if (window.scrollY > 100) {
-          logoWrapper.classList.add('sticky');
-        } else {
-          logoWrapper.classList.remove('sticky');
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      });
-    });
-  </script>
 </head>
 <body>
+  <a class="btn-reserver-top" href="https://www.planity.com/lhomme-dabord-57290-fameck" target="_blank">Réserver</a>
+
   <div class="logo-wrapper">
     <img src="img/logo.jpg" alt="Logo L'Homme D'Abord" />
   </div>
 
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#salons-anchor">Salons</a></li>
-      <li><a href="#tarifs-anchor">Tarifs</a></li>
-      <li><a href="#galerie-anchor">Galerie</a></li>
-      <li><a href="#contact-anchor">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div id="salons-anchor"></div>
-  <section id="salons" data-aos="fade-up">
+  <section id="salons">
     <h2>Nos Salons</h2>
 
-    <div class="salon" data-aos="fade-up">
+    <div class="salon">
       <h3>Fameck</h3>
       <p><strong>Adresse :</strong> Galerie du E.LECLERC, Av. François Mitterrand, 57290 Fameck</p>
       <p><strong>Téléphone :</strong> +33 3 72 82 96 80</p>
-      <p><strong>Horaires :</strong><br>
-        Lundi à Vendredi : 9h - 19h<br>
-        Samedi : 9h - 18h<br>
+      <p><strong>Horaires :</strong><br />
+        Lundi à Vendredi : 9h - 19h<br />
+        Samedi : 9h - 18h<br />
         Dimanche : Fermé</p>
       <iframe src="https://www.google.com/maps?q=Galerie+E.LECLERC,+Av.+Fran%C3%A7ois+Mitterrand,+57290+Fameck&output=embed"></iframe>
-      <p><a class="btn-reservation" href="https://www.planity.com/lhomme-dabord-57290-fameck" target="_blank">Réserver en ligne</a></p>
+      <a class="btn-reservation" href="https://www.planity.com/lhomme-dabord-57290-fameck" target="_blank">Réserver en ligne</a>
     </div>
 
-    <div class="salon" data-aos="fade-up">
+    <div class="salon">
       <h3>Metz <span class="badge">Bientôt !</span></h3>
       <p>1 Rue Harelle, Metz</p>
       <iframe src="https://www.google.com/maps?q=1+Rue+Harelle,+Metz,+France&output=embed"></iframe>
     </div>
   </section>
 
-  <div id="tarifs-anchor"></div>
-  <section id="tarifs" data-aos="fade-up">
+  <section id="tarifs">
     <h2>Prestations & Tarifs</h2>
     <ul class="tarif-list">
       <li>Coupe : 18€</li>
@@ -94,19 +55,19 @@
     </ul>
   </section>
 
-  <div id="galerie-anchor"></div>
-  <section id="galerie" data-aos="fade-up">
+  <section id="galerie">
     <h2>Galerie</h2>
     <div class="gallery-scroll">
       <div class="gallery-track">
         <img src="img/photo1.jpg" alt="Client en coupe 1" />
         <img src="img/photo2.jpg" alt="Client en coupe 2" />
+        <img src="img/photo3.jpg" alt="Client en coupe 3" />
+        <!-- Ajouter d'autres photos ici -->
       </div>
     </div>
   </section>
 
-  <div id="contact-anchor"></div>
-  <section id="contact" data-aos="fade-up">
+  <section id="contact">
     <h2>Suivez-nous</h2>
     <div class="social-icons">
       <a href="https://www.instagram.com/lhomme_dabord0" target="_blank">

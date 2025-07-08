@@ -19,10 +19,8 @@ body {
   width: 100%;
   text-align: center;
   background-color: #000;
-  padding: 40px 0;
-  transition: all 0.3s ease-in-out;
+  padding: 40px 0 20px;
   position: relative;
-  z-index: 999;
 }
 
 .logo-wrapper img {
@@ -31,68 +29,40 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.logo-wrapper.sticky {
+.btn-reserver-top {
   position: fixed;
-  top: 0;
-  padding: 10px 0;
-  background-color: #000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-}
-
-.logo-wrapper.sticky img {
-  max-width: 120px;
-}
-
-.main-nav {
-  background-color: #000;
-  color: #f5deb3;
-  padding: 10px 0;
-  position: fixed;
-  top: 80px;
-  width: 100%;
-  z-index: 998;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.main-nav.nav-hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.main-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 25px;
-}
-
-.main-nav ul li a {
-  color: #f5deb3;
+  top: 20px;
+  right: 20px;
+  background-color: #f5deb3;
+  color: #0d0d0d;
+  padding: 10px 20px;
   text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
-  transition: color 0.3s;
+  z-index: 1000;
+  transition: background 0.3s;
 }
 
-.main-nav ul li a:hover {
-  color: #ffd700;
+.btn-reserver-top:hover {
+  background-color: #e0c675;
 }
 
 section {
-  padding: 60px 20px 20px;
+  padding: 60px 20px 40px;
   max-width: 1000px;
   margin: auto;
 }
 
 h1, h2, h3 {
   color: #f5deb3;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .salon {
   background: #1a1a1a;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(245, 222, 179, 0.1);
 }
@@ -103,25 +73,25 @@ h1, h2, h3 {
 }
 
 .tarif-list li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   border-bottom: 1px solid #333;
   padding-bottom: 5px;
 }
 
 .gallery-scroll {
   overflow-x: auto;
-  overflow-y: hidden;
   white-space: nowrap;
   padding-bottom: 10px;
 }
 
 .gallery-track {
-  display: inline-flex;
+  display: flex;
   gap: 15px;
 }
 
 .gallery-track img {
-  height: 200px;
+  width: 250px;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -144,7 +114,7 @@ iframe {
   background-color: #f5deb3;
   color: #0d0d0d;
   padding: 10px 20px;
-  margin: 15px 0;
+  margin-top: 15px;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -162,26 +132,10 @@ iframe {
   margin-right: 10px;
 }
 
-.badge {
-  display: inline-block;
-  background: crimson;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-weight: bold;
-  animation: pulse 1.2s infinite;
-  margin-left: 10px;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px 10px;
   background-color: #000;
   color: #f5deb3;
+  font-size: 14px;
 }
