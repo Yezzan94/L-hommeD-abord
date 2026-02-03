@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roulette - L'HOMME D'ABORD</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background:#0f0f10; color:#fff; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 24px; }
+    .card { background:#17171a; border-radius:16px; padding:18px; margin-top:14px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+    input { width:100%; padding:12px; border-radius:10px; border:1px solid #333; background:#0f0f10; color:#fff; }
+    button { width:100%; padding:12px; border-radius:12px; border:0; margin-top:12px; font-weight:700; cursor:pointer; }
+    .btn { background:#ffd54a; color:#111; }
+    .btn:disabled { opacity:.45; cursor:not-allowed; }
+    .result { font-size: 20px; font-weight: 800; margin-top: 10px; }
+    .small { opacity:.8; font-size: 13px; line-height:1.4; }
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:#26262b; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🎡 Roulette – L'HOMME D'ABORD</h1>
+    <p class="small">1 avis Google = 1 tour. Ton cadeau est à récupérer <b>au prochain passage</b>.</p>
+
+    <div class="card">
+      <label>Prénom</label>
+      <input id="name" placeholder="Ex: Karim" />
+      <div style="height:10px"></div>
+      <label>Téléphone</label>
+      <input id="phone" placeholder="Ex: 06 12 34 56 78" />
+      <button class="btn" id="spin" disabled>Tourner la roulette</button>
+      <div class="badge" id="once" style="display:none;">✅ Tour déjà effectué sur ce téléphone</div>
+      <div class="result" id="result"></div>
+      <p class="small" id="note"></p>
+    </div>
+
+    <div class="card">
+      <p class="small">
+        ⚠️ Rappel : participation réservée aux clients. Un tour par numéro. Gain valable 30 jours.
+      </p>
+    </div>
+  </div>
+
+<script>
+  // 🎁 Modifie tes lots ici
+  const prizes = [
+    { label: "-10% sur la prochaine coupe", weight: 30 },
+    { label: "Soin barbe offert", weight: 25 },
+    { label: "Cire coiffante", weight: 20 },
+    { label: "Parfum (mini)", weight: 10 },
+    { label: "Contours offerts", weight: 10 },
+    { label: "Coupe offerte", weight: 2 },
+    { label: "Merci ! (pas de lot cette fois)", weight: 3 }
+  ];
+
+  const nameEl = document.getElementById('name');
+  const phoneEl = document.getElementById('phone');
+  const spinBtn = document.getElementById('spin');
+  const resultEl = document.getElementById('result');
+  const noteEl = document.getElementById('note');
+  const onceEl = document.getElementById('once');
+
+  function canSpin() {
+    const n = nameEl.value.trim().length >= 2;
+    const p = phoneEl.value.replace(/\s/g,'').length >= 8;
+    spinBtn.disabled = !(n && p);
+  }
+
+  nameEl.addEventListener('input', canSpin);
+  phoneEl.addEventListener('input', canSpin);
+
+  function weightedPick(items) {
+    const total = items.reduce((s, it) => s + it.weight, 0);
+    let r = Math.random() * total;
+    for (const it of items) {
+      if ((r -= it.weight) <= 0) return it.label;
+    }
+    return items[items.length - 1].label;
+  }
+
+  function phoneKey() {
+    return "lhda_spin_" + phoneEl.value.replace(/\D/g,'');
+  }
+
+  function checkAlready() {
+    const key = phoneKey();
+    if (localStorage.getItem(key)) {
+      onceEl.style.display = "inline-block";
+      spinBtn.disabled = true;
+    } else {
+      onceEl.style.display = "none";
+      canSpin();
+    }
+  }
+
+  phoneEl.addEventListener('input', checkAlready);
+
+  spinBtn.addEventListener('click', () => {
+    const key = phoneKey();
+    if (localStorage.getItem(key)) {
+      onceEl.style.display = "inline-block";
+      return;
+    }
+    const prize = weightedPick(prizes);
+    resultEl.textContent = "🎁 " + prize;
+    noteEl.textContent = "👉 Note ton lot (ou montre cet écran) lors de ton prochain passage. Valable 30 jours.";
+    localStorage.setItem(key, new Date().toISOString());
+    checkAlready();
+  });
+</script>
+</body>
+</html>
